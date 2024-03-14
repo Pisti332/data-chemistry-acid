@@ -60,3 +60,5 @@ order by id;
  *
  * Delete the `deprecated_middle_earth_character` table.
  */
+drop table
+middle_earth_character;
