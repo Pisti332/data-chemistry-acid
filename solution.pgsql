@@ -47,7 +47,13 @@ create table tolkien_character
  * Create a view named `middle_earth_character` with the original structure of the data.
  * Run the query in the `app.pgsql` file and check the results.
  */
-
+create view middle_earth_character as
+select tc.id, tc.name, r.name, g.name, cat.name
+from tolkien_character as tc
+join gender as g on g.id = tc.gender_id
+join race as r on r.id = tc.race_id
+join category as cat on cat.id = tc.category_id
+order by id;
 
 /**
  * Delete legacy data
